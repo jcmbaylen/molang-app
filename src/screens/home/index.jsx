@@ -8,6 +8,8 @@ import GreetingsIcon from '../../assets/icon-greetings.png'
 import UpdateIcon from '../../assets/icon-update.png'
 import LeaderboardIcon from '../../assets/icon-leaderboard.png'
 
+import Header from '../shared/Header'
+
 export default function Home () {
 	const router = useNavigation()
 	const handleNavigateAlphabet = () => {
@@ -16,15 +18,15 @@ export default function Home () {
 	const handleNavigateGreetings = () => {
 		router.navigate('Greetings')
 	}
-	// const handleNavigateLeaderboard = () => {
-	// router.navigate('Leaderboard')
-	// }
+	const handleNavigateLeaderboard = () => {
+	router.navigate('Leaderboard')
+	}
 	const handleNavigateUpdates = () => {
 		router.navigate('Updates')
 	}
-	const handleNavigateLeaderboard = () => {
-	router.navigate('SignIn')
-	}
+	// const handleNavigateLeaderboard = () => {
+	// router.navigate('SignIn')
+	// }
 
 	return (
 		<SafeAreaView
@@ -175,7 +177,8 @@ const styles = StyleSheet.create ({
 		paddingLeft: '2%',
 		paddingRight: '2%',
 		paddingBottom: '2%',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		backgroundColor: 'rgb(255,255,255)'
 	},
 	vsWidth: {
 		width: '49%',

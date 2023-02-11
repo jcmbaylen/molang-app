@@ -1,57 +1,51 @@
-import noSrc from '../assets/a9no.gif'
-import yesSrc from '../assets/a10yes.gif'
-import sorrySrc from '../assets/a8sorry.gif'
-import iLoveYouSrc from '../assets/a5ily.gif'
-import pleaseSrc from '../assets/a7please.gif'
-import thankYouSrc from '../assets/a6thank-you.gif'
-import wonderfulSrc from '../assets/a3wonderful.gif'
-import howAreYouSrc from '../assets/a2how-are-you.gif'
-import niceMeetYouSrc from '../assets/a4nice-to-meet-you.gif'
+import goodMorning from '../assets/gif/greetings/good-morning.gif'
+import goodNight from '../assets/gif/greetings/good-night.gif'
+import hello from '../assets/gif/greetings/hello.gif'
+import howAreYouSrc from '../assets/gif/greetings/how-are-you.gif'
+import imFine from '../assets/gif/greetings/im-fine.gif'
+import niceToMeetYou from '../assets/gif/greetings/nice-to-meet-you.gif'
+import sorry from '../assets/gif/greetings/sorry.gif'
+import bathroom from '../assets/gif/greetings/wheres-the-bathroom.gif'
 
 export const GREETINGS_DATA = [
     {
         id: '1',
+        name: 'Good Morning',
+        path: goodMorning
+    },
+    {
+        id: '2',
+        name: 'Good Night',
+        path: goodNight
+    },
+    {
+        id: '3',
+        name: 'Hello',
+        path: hello
+    },
+    {
+        id: '4',
         path: howAreYouSrc,
         name: 'How are you?'
     },
     {
-        id: '2',
-        path: wonderfulSrc,
-        name: 'Wonderful!',
-    },
-    {
-        id: '3',
-        path: niceMeetYouSrc,
-        name: 'Nice to meet you'
-    },
-    {
-        id: '4',
-        path: iLoveYouSrc,
-        name: 'I love you'
-    },
-    {
         id: '5',
-        name: 'Thank you',
-        path: thankYouSrc
+        path: imFine,
+        name: 'I am fine',
     },
     {
         id: '6',
-        name: 'Please',
-        path: pleaseSrc
+        path: niceToMeetYou,
+        name: 'Nice to meet you'
     },
     {
         id: '7',
-        name: 'Sorry',
-        path: sorrySrc
-    },
-    {
-        id: '9',
-        name: 'No',
-        path: noSrc
+        path: sorry,
+        name: 'Sorry'
     },
     {
         id: '8',
-        name: 'Yes',
-        path: yesSrc
+        path: bathroom,
+        name: 'Where is the bathroom?'
     }
 ]

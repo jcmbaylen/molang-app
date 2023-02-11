@@ -13,29 +13,25 @@ import SignIn from '../screens/home/SignIn'
 import Register from '../screens/home/Register'
 import AlphabetQuiz from '../screens/shared/AlphabetQuiz'
 import GreetingsQuiz from '../screens/shared/GreetingsQuiz'
+import Header from '../screens/shared/Header'
 
 const options = {
-    headerShown: false
+    headerShown: false,
 }
-
-// const mainOptions = 
-// {
-//         //   headerTitle: (props) => <LogoTitle {...props} />,
-//           headerRight: () => (
-//             <Button
-//               onPress={() => alert('This is a button!')}
-//               title="Info"
-//               color="#fff"
-//             />
-//           ),
-//         }}
 
 export const ROOT_NAVIGATOR = [
     {
         id: 'main',
         name: 'Main',
         component: Home,
-        // mainOptions
+        options: {
+            title: 'Main',
+            headerShown: true,
+            headerTitle: ()=> <Header/>,
+            headerStyle: {
+                backgroundColor: 'rgb(255,255,255)',
+            }
+        }
     },
     {
         id: 'alphabet',

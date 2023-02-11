@@ -3,7 +3,7 @@ import { Text, View, FlatList  } from 'react-native'
 import { Button } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 
-import { GREETINGS_DATA } from '../../data/greetings'
+import { SCHOOL_DATA } from '../../data/school'
 import FooterComponent from '../shared/FooterComponents'
 import categoryStyles from '../utils/category-styles'
 
@@ -15,7 +15,7 @@ export default function School() {
 			style={ categoryStyles.container }
 		>
 			<FlatList
-				data={ GREETINGS_DATA }
+				data={ SCHOOL_DATA }
 				keyExtractor={( item ) => item.id }
 				renderItem={({ item }) => (
 					<Button

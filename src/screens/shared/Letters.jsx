@@ -4,11 +4,35 @@ import { SafeAreaView, StyleSheet, Text, Image, View } from 'react-native'
 import { Button, HStack } from 'native-base'
 import { useRoute } from '@react-navigation/native'
 
+import { ALPHABET_DATA } from '../../data/alphabet'
+
 export default function AlphabetContent() {
   const route = useRoute()
   const router = useNavigation()
-  const Back = () => {
-	router.goBack() 
+  const handleBack = () => {
+	router.goBack()
+	// const currentPosition = ALPHABET_DATA.findIndex(
+	// 	(ALPHABET) => ALPHABET.id === route.params.id
+	// )
+
+	// if (currentPosition === 0) {
+	// 	router.goBack()
+
+	// 	return
+	// }
+
+	// const nextItem = ALPHABET_DATA[ currentPosition - 1 ]
+
+	// router.navigate('AlphabetContent', nextItem)
+  }
+  const currentPosition = ALPHABET_DATA.findIndex(
+	(ALPHABET) => ALPHABET.id === route.params.id
+	)
+	const isLastItem = (currentPosition + 1) === ALPHABET_DATA.length
+  const handleNext = () => {
+	const nextItem = ALPHABET_DATA[ isLastItem ? 0 : (currentPosition + 1) ]
+
+	router.navigate('AlphabetContent', nextItem)
   }
 
 	return (
@@ -52,25 +76,11 @@ export default function AlphabetContent() {
 				style={ styles.hStack }
 			>
 				<Button 
-					title={ styles.letter }
+					onPress={ handleBack }
 					style={ {
+						...styles.button,
 						...styles.quizButton,
-						...styles.button,
-						...styles.marginLeft
-					} }
-					// onPress={Next}
-				>
-					<Text 
-						style={ styles.quizText }
-					>
-						Next
-					</Text>
-				</Button>
-				<Button 
-					onPress={ Back }
-					style={ {
-						...styles.button,
-						...styles.quizButton
+						...styles.marginRight
 					} }
 				>
 					<Text 
@@ -79,6 +89,22 @@ export default function AlphabetContent() {
 						Back
 					</Text>
 				</Button>
+				{ !isLastItem && (
+					<Button 
+						title={ styles.letter }
+						style={ {
+							...styles.quizButton,
+							...styles.button
+						} }
+						onPress={handleNext}
+					>
+						<Text 
+							style={ styles.quizText }
+						>
+							Next
+						</Text>
+					</Button>
+				) }
 			</HStack>
 		</SafeAreaView>
 	)
@@ -116,11 +142,12 @@ const styles = StyleSheet.create ({
 		backgroundColor: '#87cefa'
 	},
 	hStack: {
-		width: '70%',
-		height: '8%',
-		marginLeft: '15%'
+		width: '100%',
+		marginHorizontal: 15,
+		display: 'flex',
+		justifyContent: 'center'
 	},
-	marginLeft: {
+	marginRight: {
 		marginRight: '6%'
 	},
 	quizText: {

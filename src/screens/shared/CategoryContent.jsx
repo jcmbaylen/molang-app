@@ -76,7 +76,7 @@ const styles = StyleSheet.create ({
 		paddingTop: '5%'
 	},
 	h1: {
-		fontSize: 40,
+		fontSize: 35,
 		color: '#000',
 		fontWeight: 'bold',
 		textAlign: 'center'

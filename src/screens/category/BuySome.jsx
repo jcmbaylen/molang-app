@@ -3,7 +3,7 @@ import { Button } from 'native-base'
 import { Text, View, FlatList  } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
-import { GREETINGS_DATA } from '../../data/greetings'
+import { BUY_DATA } from '../../data/buy'
 import FooterComponent from '../shared/FooterComponents'
 import categoryStyles from '../utils/category-styles'
 
@@ -15,7 +15,7 @@ export default function BuySome () {
 			style={ categoryStyles.container }
 		>
 			<FlatList
-				data={ GREETINGS_DATA }
+				data={ BUY_DATA }
 				keyExtractor={( item ) => item.id }
 				renderItem={({ item }) => (
 					<Button

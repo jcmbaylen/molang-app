@@ -1,7 +1,12 @@
 import React from 'react'
-import { Text, View, SafeAreaView, StyleSheet } from 'react-native'
+import { Text, View, SafeAreaView, StyleSheet, Image } from 'react-native'
 import { Button, HStack } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
+
+import GreetingsIcon from '../../assets/0greet.png'
+import SchoolIcon from '../../assets/0school.png'
+import TravelIcon from '../../assets/0travel.png'
+import BuySomeIcon from '../../assets/0buying.png'
 
 export default function GreetingsMain () {
 	const router = useNavigation()
@@ -42,6 +47,12 @@ export default function GreetingsMain () {
 					<View 
 						style={ styles.iCon }
 					>
+						<Image
+							source={ GreetingsIcon }
+							style={ {
+								...styles.image
+							} }
+						/>
 					</View>
 				</HStack>
 			</Button>
@@ -64,6 +75,12 @@ export default function GreetingsMain () {
 					<View 
 						style={ styles.iCon }
 					>
+						<Image
+							source={ SchoolIcon }
+							style={ {
+								...styles.image
+							} }
+						/>
 					</View>
 				</HStack>
 			</Button>  
@@ -86,6 +103,12 @@ export default function GreetingsMain () {
 					<View 
 						style={ styles.iCon }
 					>
+						<Image
+							source={ TravelIcon }
+							style={ {
+								...styles.image
+							} }
+						/>
 					</View>
 				</HStack>
 			</Button>  
@@ -102,12 +125,18 @@ export default function GreetingsMain () {
 						<Text 
 							style={ styles.quizText }
 						>
-							BUYING SOMETHING
+							BUYING {'\n'} SOMETHING
 						</Text>
 					</View>
 					<View 
 						style={ styles.iCon }
 					>
+						<Image
+							source={ BuySomeIcon }
+							style={ {
+								...styles.image
+							} }
+						/>
 					</View>
 				</HStack>
 			</Button>    
@@ -118,6 +147,7 @@ export default function GreetingsMain () {
 const styles = StyleSheet.create ({
 	container: {
 		height: '100%',
+		backgroundColor: 'rgb(255,255,255)'
 	},
 	quiz: {
 		width: '80%',
@@ -133,15 +163,19 @@ const styles = StyleSheet.create ({
 		backgroundColor: '#87cefa'
 	},
 	quizText: {
-		fontSize: 30,
+		fontSize: 25,
 		color: '#000',
 		fontWeight:'bold',
 		textAlign: 'center'
 	},
 	iCon: {
-		width: '30%',
+		width: '40%',
+		height: '100%'
+	},
+	image: {
+		width: '100%',
 		height: '100%',
-		backgroundColor: 'green'
+		resizeMode: 'cover'
 	},
 	hStack: {
 		width: '100%',
@@ -150,8 +184,8 @@ const styles = StyleSheet.create ({
 		justifyContent: 'center'
 	},
 	textCon: {
-		width: '70%',
+		width: '60%',
 		height: '100%',
 		justifyContent: 'center'
-	}
+	},
 }) 
